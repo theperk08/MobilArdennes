@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">MobilArdennes</string>
+    <string name="cyclam">Cyclam</string>
+    <string name="tac">TAC 08 Lignes</string>
+    <string name="fluo_line">Fluo Line Id: %1</string>
+    <string name="sncf">SNCF</string>
+    <string name="cyclam_station">%s</string>
+    <string name="cyclam_map">Cylam Carte</string>
+    <string name="tac_map">TAC 08 Carte</string>
+    <string name="tac_stop">TAC 08 Arrêts</string>
+    <string name="cyclam_total">%1$s vélos dispos dans %2$s stations</string>
+    <string name="cyclam_status">( %1$s en service, %2$s en maintenance, %3$s perdu(s) )</string>
+    <string name="cyclam_velo_dispo">%1$s vélo(s) dispo(s)<br/>%2$s place(s) libre(s)</string>
+    <string name="string_with_html"><![CDATA[
+       <em>Hello</em> <strong>World</strong>!
+ ]]></string>
+    <string name="loading_failed">Failed to load</string>
+    <string name="placeholder_result">Placeholder result text</string>
+    <string name="retry">Retry</string>
+    <string name="loading">Loading</string>
+    <string name="ardennes_photo">Ardennes photo</string>
+    <string name="test">Infos / Divers</string>
+    <string name="copyright">Appli créée par Theperk\n\nAucun support, aucune responsabilité ;-))\n\n Appli non affiliée à la plateforme Mobil\'Arden</string>
+</resources>
