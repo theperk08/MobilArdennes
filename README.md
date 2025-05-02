@@ -9,7 +9,8 @@ Pour utiliser cette appli sur votre appareil mobile :
 - Créez un nouveau projet dans Android Studio (MobilArdennes)
 - Copiez-collez / Remplacez les fichiers de ce github (à l'exception du dossier Illustrations) aux endroits correspondants dans votre projet
 - Connectez votre appareil mobile en mode développeur et lancez l'appli
-
+  
+  (après vous pouvez une fois pour toutes débrancher votre appareil mobile d'Android Studio et vous servir de l'appli quand bon vous semble ;-))
 
 ## Illustrations
 <p>
