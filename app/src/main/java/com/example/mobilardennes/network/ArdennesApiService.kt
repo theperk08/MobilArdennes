@@ -3,20 +3,12 @@ package com.example.mobilardennes.network
 import com.example.mobilardennes.model.NestedCyclamStation
 import com.example.mobilardennes.model.NestedCyclamStationVehicules
 import com.example.mobilardennes.model.NestedCyclamVehicules
-import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
-import kotlinx.serialization.json.Json
-import okhttp3.MediaType.Companion.toMediaType
-import retrofit2.Retrofit
-// import retrofit2.converter.scalars.ScalarsConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Query
 
 
-
-
 interface CyclamApiService {
     @GET("2024_04_03/stations")
-    // @GET("photos")
     suspend fun getCyclam(
         @Query("limit") limit: Int,
         @Query("program") program: String
@@ -24,21 +16,17 @@ interface CyclamApiService {
 }
 
 
-
 interface CyclamApiStationService {
     @GET("2024_04_03/vehicules")
-    // @GET("photos")
     suspend fun getCyclamStation(
         @Query("dockless") dockless: String? = "false",
         @Query("program") program: String = "cyclam",
         @Query("station") station: String?,
-        //@Query("status") status: String?=null // paramètre optionnel
     ): NestedCyclamStationVehicules
 }
 
 interface CyclamApiVehiculesService {
     @GET("2024_04_03/vehicules")
-    // @GET("photos")
     suspend fun getCyclamVehicules(
         @Query("program") program: String = "cyclam",
         @Query("limit") limit: String = "100",
@@ -78,8 +66,4 @@ interface CyclamApiVehiculesService {
 
 // https://api.cyclist.ecovelo.mobi/2024_04_03/trips/trip_nUssNYH9txs7QbBwTekbjM
 // possible mais requiert login autorisation
-
-object CyclamStationApi {
-
-}
 
