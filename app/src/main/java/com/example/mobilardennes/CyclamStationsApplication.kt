@@ -1,21 +1,9 @@
 package com.example.mobilardennes
 
 import android.app.Application
-import android.media.Image
-import android.util.Log
-import androidx.compose.runtime.Composable
-// import androidx.compose.ui.graphics.Color
-import android.graphics.Color
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.colorResource
-import androidx.core.app.NotificationCompat.getColor
 import androidx.core.graphics.toColorInt
-
-import androidx.navigation.navArgument
 import com.example.mobilardennes.data.AppContainer
 import com.example.mobilardennes.data.DefaultAppContainer
-import com.example.mobilardennes.ui.screens.ArdennesUiState
-import com.example.mobilardennes.ui.screens.ArdennesViewModel
 
 class CyclamStationsApplication: Application() {
     lateinit var container: AppContainer
@@ -81,18 +69,6 @@ fun batteryPercentInterval(nb: Int): Int {
     return inter
 }
 
-fun couleurKm(nb: Int): Int {
-    val coul = when (nb) {
-        0 -> R.color.red
-        in 1..10 -> R.color.orange
-        in 11..25 -> R.color.turquoise
-        in 26..50 -> R.color.dodger_blue
-        else -> R.color.blue
-    }
-    return coul
-}
-
-
 fun imageBatteryPercent(nb: Int): Int {
     val im = when (nb) {
         in 0..5 -> R.drawable.battery0
@@ -104,34 +80,12 @@ fun imageBatteryPercent(nb: Int): Int {
     return im
 }
 
-fun backgroundColor(nb: Int): Int {
-    val col = when(nb) {
-        0 -> R.drawable.color_red
-        1 -> R.drawable.color_orange
-        2 -> R.drawable.color_turquoise
-        3 -> R.drawable.color_dodgerblue
-        else -> R.drawable.color_blue
-    }
-    return col
-}
-
-
 fun popupStationCyclam(nbVelos: Int, nbPlaces: Int): String
 {
-
-    // val nb = R.color.red
-    // Log.d("couleur", nb)
-    val colorVelos = couleurString(nbVelos)
-    val colorPlaces = couleurString(nbPlaces)
     var velos = if (nbVelos > 1) {"${nbVelos} vélos"} else {"${nbVelos} vélo "}
     var places = if (nbPlaces > 1) {"${nbPlaces} emplacements"} else {"${nbPlaces} emplacement "}
-    // val html = "<span style=\"color:${colorVelos};\">${velos}</span><br><span style=\"color:${colorPlaces};\">${places}</span>"
     val html = "${velos} \n ${places}"
     return html
-}
-
-fun OnClickButtonCyclam(cyclamview: ArdennesViewModel,  stationId: String) {
-
 }
 
 fun sncfTime(chaine: String): String {
@@ -144,7 +98,6 @@ fun sncfTime(chaine: String): String {
 }
 
 fun horairesTac(heure: Int?): String {
-
     var hr = if (heure != null) {
         if (heure > -1)
             (heure / 60).toInt().toString().padStart(2, '0') + ":" + (heure % 60).toString().padStart(2, '0')
