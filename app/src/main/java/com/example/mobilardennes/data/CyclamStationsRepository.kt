@@ -1,6 +1,5 @@
 package com.example.mobilardennes.data
 
-import com.example.mobilardennes.model.CyclamData
 import com.example.mobilardennes.model.NestedCyclamStation
 import com.example.mobilardennes.model.NestedCyclamStationVehicules
 import com.example.mobilardennes.model.NestedCyclamVehicules
@@ -16,19 +15,16 @@ interface CyclamStationsRepository {
     suspend fun getCyclamVehiculesStatus(status: String?): NestedCyclamVehicules
 }
 
-
 class NetworkCyclamStationsRepository(
     private val cyclamApiService: CyclamApiService,
     private val cyclamApiStationService : CyclamApiStationService,
     private val cyclamApiVehiculesService: CyclamApiVehiculesService
 
 ) : CyclamStationsRepository {
-    // override suspend fun getCyclamStations(): List<CyclamData> =cyclamApiService.getCyclam(limit = 100, program = "cyclam").data
     override suspend fun getCyclamStations(): NestedCyclamStation =cyclamApiService.getCyclam(limit = 100, program = "cyclam")
     override suspend fun getCyclamStationUnique(station: String?): NestedCyclamStationVehicules = cyclamApiStationService.getCyclamStation(station=station)
     override suspend fun getCyclamVehicules(): NestedCyclamVehicules = cyclamApiVehiculesService.getCyclamVehicules()
     override suspend fun getCyclamVehiculesStatus(status: String?): NestedCyclamVehicules = cyclamApiVehiculesService.getCyclamVehicules(status=status)
-
     }
 
 

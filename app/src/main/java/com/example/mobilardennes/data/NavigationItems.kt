@@ -1,6 +1,6 @@
 package com.example.mobilardennes.data
 
-import androidx.compose.ui.graphics.vector.ImageVector
+
 import com.example.mobilardennes.model.NestedCyclamVehicules
 import com.example.mobilardennes.model.Stops
 import com.example.mobilardennes.model.VehiculeData
@@ -8,9 +8,6 @@ import com.example.mobilardennes.model.VehiculeData
 // Create Navigation Items Class to Select Unselect items
 data class NavigationItems(
     var ecran: Int = 0,
-    // val selectedIcon: ImageVector,
-    // val unselectedIcon: ImageVector,
-    // val badgeCount: Int? = null
     var cyclamStationName: String? = "",
     var cyclamStationId: String? = "",
     val cyclamStationsList: List<StationBatteryItems> = listOf(StationBatteryItems()),//MutableMap <String, String>? = mutableMapOf("test" to "test")
@@ -22,20 +19,17 @@ data class CyclamVehiculesStatus(
 )
 
 data class StationBatteryItems(
-    //val cyclamStationName: String? = "",
     val cyclamStationId: String? = "",
     val batList: Map <Int, Int> = mapOf(0 to 0),
     var maxBat: Int = 0
-
 )
 
 data class StationBatteryItems2(
-    //val cyclamStationName: String? = "",
     val cyclamStationId: String? = "",
     val batList: MutableMap <Int, Int> = mutableMapOf(0 to 0),
     var maxBat: Int = 0
-
 )
+
 data class SncfItems(
     var sncfStationId: String? = "0087172007",
     var sncfSens: String? = "Departures",
@@ -50,7 +44,6 @@ data class Gare(
     val nom: String? = "",
     val trigramme: String? = "",
     val segments: String? = "",
-    //val position: String? = "",
     val lat: Float? = 0f,
     val lon: Float? = 0f,
     val codeCommune: String? = "",
