@@ -1,7 +1,5 @@
 package com.example.mobilardennes.model
 
-import androidx.collection.objectFloatMap
-import androidx.compose.ui.graphics.Path
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
@@ -9,7 +7,6 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class NestedFluoTac (
     var Data: List<TacLines> ?= listOf(TacLines(Company("",0,""),0, listOf(LineDirection(0,"")),"","", Networks("",0,""),"", 0))
-
 )
 
 @Serializable
@@ -37,7 +34,6 @@ data class Company (
     val Name: String
 )
 
-
 @Serializable
 data class Networks (
     val Code : String,
@@ -45,11 +41,9 @@ data class Networks (
     val Name: String
 )
 
-
 @Serializable
 data class NestedFluoTacStops (
     var Data: TacStops ?= TacStops(0, listOf(StopDirections(LineDirection(0,""),0, listOf(Stops(0,0f,0f, "",0,"")))))
-
 )
 
 @Serializable
@@ -90,7 +84,6 @@ data class FluoStop (
 )
 
 // Horaires des Stops
-
 @Serializable
 data class NestedStopsHours (
     var Data: HoursStops
@@ -103,8 +96,6 @@ data class NestedLineStopsHours(
         )
     )
 )
-
-
 
 @Serializable
 data class HoursLineStops (
@@ -120,7 +111,6 @@ data class LineStops (
     var StopId: Int
 )
 
-
 @Serializable
 data class HoursStops (
     var Hours: List<Hours>
@@ -130,9 +120,6 @@ data class HoursStops (
 data class Hours (
     val AimedArrivalTime: Int?,
     val AimedDepartureTime: Int?,
-    //val BoardingPoint: null,
-    //val CrowdsDetails: null,
-    //val FrequencyId: null,
     val IsCancelled: Boolean?,
     val IsDisrupted: Boolean?,
     val LineId: Int?,
@@ -148,7 +135,6 @@ data class Hours (
     val TheoricDepartureTime: Int?,
     val VehicleJourneyId: Int?
 )
-
 
 @Serializable
 data class NestedStopsHoursInstant(
@@ -190,7 +176,6 @@ data class Schedules(
     val lineId: String?,
     val direction: String?,
     val terminus: Terminus,
-    //val disruptions: Disruptions,
     val nextStops: List<TimeStops>
 ): Comparable<Schedules> {
     override fun compareTo(other: Schedules)= compareValuesBy(this, other,
@@ -218,19 +203,7 @@ data class TimeStops(
     @SerialName("time") val nextStopTime: String?
 )
 
-        //: Int {
-//        TODO("Not yet implemented")
-
-/*
-: Comparable<Schedules> {
-    override fun compareTo(other: Schedules)= compareValuesBy(this, other,
-        {it.nextStops[0].nextStopTime},
-        {it.nextStops[0].nextStopTime})
-}
- */
-
 data class LineChecked(
     val lineName: String,
-    //val lineId: String,
     val completed: Boolean=false
 )

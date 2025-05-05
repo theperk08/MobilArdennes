@@ -7,7 +7,6 @@ import kotlinx.serialization.SerialName
 @Serializable
 data class NestedCyclamStation (
     var data: List<CyclamData>
-
 )
 
 @Serializable
@@ -17,7 +16,6 @@ data class CyclamData(
     val position: Position,
     val statistics: Statistics,
     val vehicules: Vehicules
-
 )
 
 @Serializable
@@ -42,7 +40,6 @@ data class Vehicules (
     val data: List<String>
 )
 
-
 // station précise
 @Serializable
 data class NestedCyclamStationVehicules (
@@ -63,7 +60,6 @@ data class BatteryVae (
     val percent : Int,
     val remaining_distance: Int
 )
-
 
 @Serializable
 data class NestedCyclamVehicules (

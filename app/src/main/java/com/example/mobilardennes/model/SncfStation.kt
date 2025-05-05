@@ -9,22 +9,6 @@ data class NestedSncfStation (
     var data: List<SncfTrainData>
 
 )
-/*
-@Serializable
-data class SncfTrainData(
-    val stationId: String,
-    val direction: String,
-    val trainNumber: String,
-    val scheduledTime: String,
-    val platform: Platform
-
-)
-
-@Serializable
-data class Platform (
-    val track: String,
-
-)*/
 
 @Serializable
 data class SncfTrainData(
@@ -41,7 +25,6 @@ data class SncfTrainData(
     val stops: List<String>?,
     val stationName: String?,
     val uic: String
-
 )
 
 @Serializable
